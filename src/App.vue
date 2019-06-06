@@ -1,7 +1,7 @@
 <template>
   <v-app>
 
-    <!-- <v-toolbar class="headline" fixed>
+    <!-- <v-toolbar class="navBar" :fixed="navHeader">
       
       <span>Harit</span>
       <span class="font-weight-light">Griha</span>
@@ -20,22 +20,42 @@
         <v-icon dark>menu</v-icon>
       </v-btn>
     </v-toolbar> -->
+    <nav id="navBar">
+      <v-container grid-list-xs class="pa-0 fill-height">
+        <v-layout class="fill-height" row>
+          <div class="logo mx-3 my-auto headline">
+            <span>Harit</span>
+            <span class="font-weight-light">Griha</span>
+          </div>
 
-    <div class="topNav">
-      <h1>Animated Fixed topNav (Scroll Down)</h1>
-    </div>
+          <div class=" navbar-list body-1 mx-3 my-auto">
+            <span class="font-weight-light pa-4"><strong>Who Are We</strong></span>
+            <span class="font-weight-light pa-4"><strong>Our Theory</strong></span>
+            <span class="font-weight-light pa-4"><strong>Our Approch</strong></span>
+          </div>
+        </v-layout>
+      </v-container>
+    </nav>
+
     <v-content>
 
       <!-- <div class="hidden-sm-and-down" style="padding-top: 130px;"></div>
       <div class="hidden-md-and-up" style="padding-top: 110px;"></div> -->
       
       <section>
-        <v-parallax class="fill-height" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
+        <!-- <v-parallax class="header-image" :src="require('./assets/img/hanan-1399891-unsplash.jpg')">
           <v-layout align-center column justify-center>
             <h1 class="display-2 font-weight-thin mb-3">Vuetify.js</h1>
             <h4 class="subheading">Build your application today!</h4>
           </v-layout>
-        </v-parallax>
+        </v-parallax> -->
+
+        <v-img class="header-image" :src="require('./assets/img/bg_1.jpg')" gradient="to top right, rgba(100,115,201,.3), rgba(25,32,72,.3)">
+          <v-layout fill-height align-center column justify-center ma-5>
+            <h1 class="display-1 font-weight-light white--text text-xs-center ma-5">We are one of the largest urban networks of public-private partnership schools in India.</h1>
+            <!-- <h4 class="subheading white--text">Build your application today!</h4> -->
+          </v-layout>
+        </v-img>
       </section>
 
       <section class="first-section" >
@@ -168,7 +188,6 @@
 
 <script>
   // import HelloWorld from './components/HelloWorld'
-
   export default {
     name: 'App',
     components: {
@@ -176,7 +195,7 @@
     },
     data () {
       return {
-
+        navHeader: false,
         drawer: false,
         items: [
           { title: 'Home', icon: 'dashboard' },
@@ -229,13 +248,49 @@
     mounted() {
       console.log('Mounted')
       let scope = this
+      let navClasses = document.getElementById('navBar').classList;
       window.onscroll = function() {
-        
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        if(window.scrollY >= 0 && window.scrollY <= 20) {
+          console.log('Im with in 100', window.scrollY)
+          // upAction()
           
-        } else {
+          navClasses.remove('collapse');
+          navClasses.add('open');
+          navClasses.add('navbar-transparent')
+          navClasses.remove('navbar-white');
+
+        } else if (window.scrollY >= 20 && window.scrollY <= 550) {
+          console.log('Im between 100 and 550', window.scrollY)
+          // downAction()
+
+          navClasses.remove('open');
+          navClasses.add('collapse');
+        } else if (window.scrollY >= 550){
+          console.log('Im more than 550', window.scrollY)
+          // upAction()
           
+          navClasses.remove('collapse');
+          navClasses.add('open');
+          navClasses.add('navbar-white')
         }
+
+
+        function downAction() {
+          console.log('downAction')
+          navClasses.remove('open');
+          navClasses.add('collapse');
+        }
+
+        function upAction() {
+          console.log('upAction')
+          navClasses.remove('collapse');
+          navClasses.add('open');
+        }
+
+        // window.addEventListener("scroll", function() {
+        //   scrollDetect(homeAction, downAction, upAction);
+        // });
+
       };
     },
     methods: {
@@ -245,49 +300,91 @@
 
 <style>
 
-.topNav {
-    position: fixed;
+nav {
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 73px;
+  z-index: 2;
+}
+
+.collapse {
+  -webkit-animation: collapse .5s ease forwards;
+          animation: collapse .5s ease forwards;
+}
+
+.open {
+  -webkit-animation: open .5s ease forwards;
+          animation: open .5s ease forwards;
+}
+
+.navbar-transparent {
+  color: #fff;
+  /* background-color: #303a5229 */
+}
+
+.navbar-white {
+  color: #000;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-list > span {
+
+}
+
+@-webkit-keyframes collapse {
+  from {
+    opacity: 1;
     top: 0;
-    left: 0;
-    width: 100%;
-    background: #cc5350;
-    color:#fff;
-    z-index: 1000;
-    height: 200px;
-    overflow: hidden;
-    -webkit-transition: height 0.3s;
-    -moz-transition: height 0.3s;
-    transition: height 0.3s;
-    text-align:center;
-    line-height:160px;
-
-}
-.topNav.shrink {
-    height: 100px;
-    line-height:80px;
-    background: white;
-}
-.topNav h1
-{
-    font-size:30px;
-    font-weight:normal;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
+  }
+  to {
+    opacity: 0;
+    top: -73px;
+  }
 }
 
-.topNav.shrink h1
-{
-    font-size:24px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    color: black;
+@keyframes collapse {
+  from {
+    opacity: 1;
+    top: 0;
+  }
+  to {
+    opacity: 0;
+    top: -73px;
+  }
 }
-.content
-{
-height:2000px;
- /*just to get the page to scroll*/
+@-webkit-keyframes open {
+  from {
+    opacity: 0;
+    top: -73px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes open {
+  from {
+    opacity: 0;
+    top: -73px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.header-image {
+  height: 100vh!important;
 }
 
 .s_ourApproch p {
