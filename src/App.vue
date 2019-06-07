@@ -25,13 +25,13 @@
         <v-layout class="fill-height" row>
           <div class="logo mx-3 my-auto headline">
             <span>Harit</span>
-            <span class="font-weight-light">Griha</span>
+            <span class="title font-weight-light">Griha</span>
           </div>
 
           <div class=" navbar-list body-1 mx-3 my-auto">
-            <span class="font-weight-light pa-4"><strong>Who Are We</strong></span>
-            <span class="font-weight-light pa-4"><strong>Our Theory</strong></span>
-            <span class="font-weight-light pa-4"><strong>Our Approch</strong></span>
+            <span class="pa-4">Who Are We</span>
+            <span class="pa-4">Our Theory</span>
+            <span class="pa-4">Our Approch</span>
           </div>
         </v-layout>
       </v-container>
@@ -42,7 +42,7 @@
       <!-- <div class="hidden-sm-and-down" style="padding-top: 130px;"></div>
       <div class="hidden-md-and-up" style="padding-top: 110px;"></div> -->
       
-      <section>
+      <!-- <section> -->
         <!-- <v-parallax class="header-image" :src="require('./assets/img/hanan-1399891-unsplash.jpg')">
           <v-layout align-center column justify-center>
             <h1 class="display-2 font-weight-thin mb-3">Vuetify.js</h1>
@@ -50,61 +50,92 @@
           </v-layout>
         </v-parallax> -->
 
-        <v-img class="header-image" :src="require('./assets/img/bg_1.jpg')" gradient="to top right, rgba(100,115,201,.3), rgba(25,32,72,.3)">
+        <v-img class="header-image" :src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" gradient="to top right, rgb(0, 0, 0, .23), rgb(0, 0, 0, .5)">
           <v-layout fill-height align-center column justify-center ma-5>
             <h1 class="display-1 font-weight-light white--text text-xs-center ma-5">We are one of the largest urban networks of public-private partnership schools in India.</h1>
             <!-- <h4 class="subheading white--text">Build your application today!</h4> -->
           </v-layout>
         </v-img>
-      </section>
+      <!-- </section> -->
 
-      <section class="first-section" >
+      <section class="first-section">
         <v-container grid-list-xs fill-height>
-          <v-layout align-center justify-center row fill-height>
-            <v-flex xs8>
-              <v-card height="600" flat>
+          <v-layout align-center justify-space-between row fill-height>
+            <v-flex md6>
+              <!-- <v-card height="340" color="rgb(0, 230, 118, 0.5)" hover flat> -->
+              <v-card height="340" color="#fafafa" flat>
                 <v-card-title class="fill-height" primary-title>
-                  <div class="pa-4 text-xs-left">
-                    <p class="pb-4 px-4 mx-5 title font-weight-thin"> Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel.</p>
-                    <p class="pb-4 px-4 mx-5 title font-weight-thin"> Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque.</p>
-                    <p class="pb-4 px-4 mx-5 title font-weight-thin"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam harum, dicta a cumque qui vitae saepe nesciunt, atque quos repudiandae quis perspiciatis expedita soluta esse quasi aliquid eum nostrum sed, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
+                  <div class="text-xs-left pa-4">
+                    <h1 class="display-1 font-weight-light">Served Over</h1>
+                    <h1 class="display-3 font-weight-medium">1,321,901</h1>
+                    <h1 class="display-1 font-weight-light">Children in 150 Countries</h1>
                   </div>
                 </v-card-title>
               </v-card>
+            </v-flex>
+            <v-flex md6 ml-5>
+              <h1 class="display-3 font-weight-medium text-xs-left pb-4">Who Are We?</h1>
+              <h1 class="font-weight-light text-xs-left">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h1>
+
+              <p class="text-xs-left font-weight-light pt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+
             </v-flex>
           </v-layout>
         </v-container>
       </section>
 
       <section>
+        <v-container grid-list-xs fill-height>
+          <v-layout align-center justify-space-between row fill-height>
+            <v-flex md6>
+              <h1 class="display-2 font-weight-medium text-xs-right pb-4">Why sustainable living?</h1>
+              <h1 class="font-weight-light text-xs-right">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h1>
 
-        <v-layout row wrap align-content-center  fill-height>
-          <v-flex>
-            <h1 class="headline d-flex justify-center">Our Theory for the Organization</h1>
-          </v-flex>
-        </v-layout>
+              <p class="text-xs-right font-weight-light pt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+
+            </v-flex>
+            <v-flex md6 ml-5>
+              <!-- <v-card height="340" color="rgb(0, 230, 118, 0.5)" hover flat> -->
+              <v-card height="340" class="elevation-20">
+                <v-img height="340" :src="require('./assets/img/noah-buscher-1162202-unsplash.jpg')">
+                </v-img>
+                <!-- <v-card-title class="fill-height" primary-title>
+                  <div class="text-xs-left pa-4">
+                    <h1 class="display-1 font-weight-light">Served Over</h1>
+                    <h1 class="display-3 font-weight-medium">1,321,901</h1>
+                    <h1 class="display-1 font-weight-light">Children in 150 Countries</h1>
+                  </div>
+                </v-card-title> -->
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+        
       </section>
 
-      <section class="s_ourApproch">
+      <section>
         <v-container class="px-0" grid-list-xs fill-height>
-          <v-layout align-content-start justify-space-around row wrap fill-height>
-          <v-flex xs12 pt-3 pb-5>
-            <h1 class="display-1 d-flex justify-center">Our Approch</h1>
+          <v-layout align-content-start row wrap fill-height>
+          <v-flex xs12 mb-5>
+            <h1 class="display-3 font-weight-medium d-flex justify-center">Our Approch</h1>
           </v-flex>
-            <v-flex class="pa-2 pt-5" xs4 v-for="(i, index) in 5" :key="i">
-              <v-card  color="#F9F9F9" class="pa-3 fill-height" flat>
-                <div class="text-xs-center pb-3">
-                  <v-icon large color="blue-grey darken-2">{{ourApproach.icons[index]}}</v-icon>
-                </div>
-                <v-card-title primary-title>
-                  <div class="text-xs-center">
-                    <h1 class="title pb-3">{{ourApproach.headings[index]}}</h1>
-                    <p class="body-1 mb-0">
-                      {{ourApproach.descriptions[index]}}
-                    </p>
-                  </div>
-                </v-card-title>
+            <v-flex xs4 v-for="(i, index) in 5" :key="i">
+              <v-card color="#fafafa" class="pa-5 fill-height d-flex align-baseline justify-start" flat>
+                <!-- <div class="text-xs-center pb-3">
+                </div> -->
+                <!-- <v-card-title class="d-flex align-baseline" primary-title > -->
+                  <v-flex xs2 mr-4>
+                    <v-icon size="50">{{ourApproach.icons[index]}}</v-icon>
+                  </v-flex>
+                  <v-flex class="align-self-start" xs10>
+                    <div class="text-xs-left">
+                      <h1 class="font-weight-light pb-1">{{ourApproach.headings[index]}}</h1>
+                      <p class="font-weight-light mb-0">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.
+                      </p>
+                    </div>
+                  </v-flex>
+                <!-- </v-card-title> -->
               </v-card>
             </v-flex>
           </v-layout>
@@ -220,7 +251,7 @@
         ourApproach: {
           approaches: 5,
           icons: ['call_split', 'business', 'chat', 'present_to_all', 'email'],
-          headings: ['Excellent Educators', 'Progressive Pedagogy', 'Maximising Resources', 'Parents As Partners', 'Accountability to Learning'],
+          headings: ['Excellent Educators', 'Progressive Pedagogy', 'Maximising Resources', 'Parents As Partners', 'Accountability'],
           descriptions: [
             'Each Akanksha school builds and develops a team of teachers, a school leader, admin, and a social worker collaborating to run the school.',
             'The Akanksha curriculum and Network Support Team empowers teachers and school leaders with best practices in pedagogy, using a skills-based approach and rigorous standards for student learning.',
@@ -300,6 +331,31 @@
 
 <style>
 
+.theme--light.application {
+    background: #fff!important;
+    color: #424242!important
+}
+
+section {
+  padding: 5rem 0;
+  border-bottom: 1px solid #f2f2f2 !important;
+}
+
+.align-self-start {
+  align-self: flex-start!important;
+}
+
+section:nth-child(even) {
+  /* min-height: 500px; */
+  background: #f9f9f9;
+}
+/* section:nth-child(even) {
+  min-height: 500px;
+  background: #F9F9F9;
+} */
+
+/*  ---------------- Css for Nav bar  ---------------- */
+
 nav {
   color: #fff;
   position: fixed;
@@ -325,7 +381,7 @@ nav {
 }
 
 .navbar-white {
-  color: #000;
+  color: #424242;
   background-color: #fff;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -335,10 +391,6 @@ nav {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-}
-
-.navbar-list > span {
-
 }
 
 @-webkit-keyframes collapse {
@@ -383,50 +435,16 @@ nav {
   }
 }
 
+/*  ---------------- Css for Nav bar  ---------------- */
+
+
+/*  ---------------- Header Images  ---------------- */
+
 .header-image {
   height: 100vh!important;
 }
 
-.s_ourApproch p {
-  line-height: 28px!important;
-}
-
-.first-section {
-  /* background-image: url('./assets/img/Spiral_Abstract_Seamless_Pattern/Spiral Abstract Seamless Pattern.svg')!important;
-  width: 100%;
-  height: 400px;
-  background-image: url('img_flowers.jpg');
-  background-repeat: initial;
-  background-size: contain;
-  border: 1px solid red; */
-}
-
-section:nth-child(odd) {
-  min-height: 500px;
-  background: #fff;
-}
-section:nth-child(even) {
-  min-height: 500px;
-  background: #F9F9F9;
-}
-
-.bottom-gradient {
-  background-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.4) 0%,
-    transparent 72px
-  );
-}
-
-.repeating-gradient {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 0, 0, 0.25),
-    rgba(255, 0, 0, 0.25) 5px,
-    rgba(0, 0, 255, 0.25) 5px,
-    rgba(0, 0, 255, 0.25) 10px
-  );
-}
+/*  ---------------- Header Image ---------------- */
 
 .v-card--reveal {
   align-items: center;
