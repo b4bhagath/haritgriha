@@ -49,16 +49,18 @@
             <h4 class="subheading">Build your application today!</h4>
           </v-layout>
         </v-parallax> -->
+      <!-- </section> -->
 
+      <!-- Header Image -->
         <v-img class="header-image" :src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" gradient="to top right, rgb(0, 0, 0, .23), rgb(0, 0, 0, .5)">
           <v-layout fill-height align-center column justify-center ma-5>
             <h1 class="display-1 font-weight-light white--text text-xs-center ma-5">We are one of the largest urban networks of public-private partnership schools in India.</h1>
             <!-- <h4 class="subheading white--text">Build your application today!</h4> -->
           </v-layout>
         </v-img>
-      <!-- </section> -->
 
-      <section class="first-section">
+      <!-- Who Are We -->
+      <section>
         <v-container grid-list-xs fill-height>
           <v-layout align-center justify-space-between row fill-height>
             <v-flex md6>
@@ -84,6 +86,7 @@
         </v-container>
       </section>
 
+      <!-- Why sustainable living? -->
       <section>
         <v-container grid-list-xs fill-height>
           <v-layout align-center justify-space-between row fill-height>
@@ -113,6 +116,7 @@
         
       </section>
 
+      <!-- Our Approch -->
       <section>
         <v-container class="px-0" grid-list-xs fill-height>
           <v-layout align-content-start row wrap fill-height>
@@ -142,12 +146,28 @@
         </v-container>
       </section>
 
-      <section>
-        <v-layout row wrap align-content-center  fill-height>
-          <v-flex>
-            <h1 class="headline d-flex justify-center">Stats comes here</h1>
-          </v-flex>
-        </v-layout>
+      <section class="success-stories">
+        <div class="overlay-1 fill-height">
+          <v-container grid-list-xs fill-height>
+            <v-layout align-center justify-space-between row fill-height>
+              <v-flex md6>
+                <!-- <v-card height="340" color="rgb(0, 230, 118, 0.5)" hover flat> -->
+                <v-card class="card elevation-15" height="340" color="#fafafa" flat>
+                  <v-img height="340" :src="require('./assets/img/bg_3.jpg')">
+                  </v-img>
+                </v-card>
+              </v-flex>
+              <v-flex md6 ml-5>
+                <p class="title white--text font-weight-light">Success Stories</p>
+                <h1 class="headline font-weight-medium text-xs-left white--text">Water Is Life. We Successfuly Provide Clean Water in South East Asia</h1>
+                <p class="subheading font-weight-light white--text text-xs-left pt-2">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+
+                <v-btn color="#f7ca44" class="button mx-0 my-3 elevation-15" depressed>Read The Full Story</v-btn>
+
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </div>
       </section>
 
       <section>
@@ -246,7 +266,6 @@
             src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
           }
         ],
-        landingPhoto: require('./assets/img/ZkFmQmNccw.jpg'),
         extended: true,
         ourApproach: {
           approaches: 5,
@@ -444,6 +463,39 @@ nav {
   height: 100vh!important;
 }
 
+/*  ---------------- Header Image ---------------- */
+
+
+/*  ---------------- Header Image ---------------- */
+
+.success-stories {
+  background-image: url('./assets/img/bg_3.jpg');
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center; 
+  padding: 0!important;
+}
+
+.success-stories > .overlay-1{
+  padding: 5rem 0;
+  content: "";
+  background: #28a745;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .9;
+  /* z-index: 2; */
+}
+
+.success-stories .button {
+  width: 300px;
+  height: 55px;
+}
+
+.success-stories .card {
+  border-radius: 3%;
+}
 /*  ---------------- Header Image ---------------- */
 
 .v-card--reveal {
