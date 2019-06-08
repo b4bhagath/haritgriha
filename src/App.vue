@@ -20,18 +20,21 @@
         <v-icon dark>menu</v-icon>
       </v-btn>
     </v-toolbar> -->
-    <nav id="navBar">
+    <nav id="navBar" class="hidden-sm-and-down">
       <v-container grid-list-xs class="pa-0 fill-height">
         <v-layout class="fill-height" row>
           <div class="logo mx-3 my-auto headline">
-            <span>Harit</span>
-            <span class="title font-weight-light">Griha</span>
+            <span class="font-weight-bold">Harit</span>
+            <span class="title font-weight-medium">Griha</span>
           </div>
 
           <div class=" navbar-list body-1 mx-3 my-auto">
-            <span class="pa-4">Who Are We</span>
-            <span class="pa-4">Our Theory</span>
-            <span class="pa-4">Our Approch</span>
+            <span class="pa-4 font-weight-medium body-1">Who Are We</span>
+            <span class="pa-4 font-weight-medium body-1">Why sustainable living</span>
+            <span class="pa-4 font-weight-medium body-1">Our Approch</span>
+            <span class="pa-4 font-weight-medium body-1">Gallery</span>
+            <span class="pa-4 font-weight-medium body-1">Blog</span>
+            <span class="pa-4 font-weight-medium body-1">Our Team</span>
           </div>
         </v-layout>
       </v-container>
@@ -52,34 +55,40 @@
       <!-- </section> -->
 
       <!-- Header Image -->
-        <v-img class="header-image" :src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" gradient="to top right, rgb(0, 0, 0, .23), rgb(0, 0, 0, .5)">
-          <v-layout fill-height align-center column justify-center ma-5>
-            <h1 class="display-1 font-weight-light white--text text-xs-center ma-5">We are one of the largest urban networks of public-private partnership schools in India.</h1>
-            <!-- <h4 class="subheading white--text">Build your application today!</h4> -->
-          </v-layout>
+      <div class="header-image fill-height">
+        <v-img class="fill-height" :lazy-src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" :src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" gradient="to top right, rgb(0, 0, 0, .3), rgb(0, 0, 0, .6)">
+          <v-container fill-height grid-list-md pa-0>
+            <v-layout align-center column justify-center :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}">
+              <div :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}">
+                <h1 class="display-3 font-weight-light white--text text-xs-center">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+              </div>
+              <!-- <h4 class="subheading white--text">Build your application today!</h4> -->
+            </v-layout>
+          </v-container>
         </v-img>
+      </div>
 
       <!-- Who Are We -->
       <section>
         <v-container grid-list-xs fill-height>
-          <v-layout align-center justify-space-between row fill-height>
-            <v-flex md6>
+          <v-layout align-center justify-space-between row fill-height :class="{'wrap': $vuetify.breakpoint.smAndDown, '': $vuetify.breakpoint.mdAndUp}">
+            <v-flex md6 xs12>
               <!-- <v-card height="340" color="rgb(0, 230, 118, 0.5)" hover flat> -->
               <v-card height="340" color="#fafafa" flat>
                 <v-card-title class="fill-height" primary-title>
-                  <div class="text-xs-left pa-4">
+                  <div class="text-xs-center text-sm-left pa-4">
                     <h1 class="display-1 font-weight-light">Served Over</h1>
-                    <h1 class="display-3 font-weight-medium">1,321,901</h1>
+                    <h1 class="display-3 font-weight-medium primary--text">1,321,901</h1>
                     <h1 class="display-1 font-weight-light">Children in 150 Countries</h1>
                   </div>
                 </v-card-title>
               </v-card>
             </v-flex>
-            <v-flex md6 ml-5>
-              <h1 class="display-3 font-weight-medium text-xs-left pb-4">Who Are We?</h1>
-              <h1 class="font-weight-light text-xs-left">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h1>
+            <v-flex md6 xs12 ml-5>
+              <h1 class="display-2 font-weight-medium text-xs-center text-sm-left pb-3">Who Are We?</h1>
+              <h1 class="font-weight-light text-xs-center text-sm-left">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h1>
 
-              <p class="text-xs-left font-weight-light pt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p class="text-xs-center text-sm-left font-weight-light pt-3">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 
             </v-flex>
           </v-layout>
@@ -89,15 +98,15 @@
       <!-- Why sustainable living? -->
       <section>
         <v-container grid-list-xs fill-height>
-          <v-layout align-center justify-space-between row fill-height>
-            <v-flex md6>
-              <h1 class="display-2 font-weight-medium text-xs-right pb-4">Why sustainable living?</h1>
+          <v-layout align-center justify-space-between row fill-height :class="{'wrap': $vuetify.breakpoint.smAndDown, '': $vuetify.breakpoint.mdAndUp}">
+            <v-flex xs12 md6>
+              <h1 class="display-2 font-weight-medium text-xs-right pb-2">Why sustainable living?</h1>
               <h1 class="font-weight-light text-xs-right">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h1>
 
-              <p class="text-xs-right font-weight-light pt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p class="text-xs-right font-weight-light pt-3">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 
             </v-flex>
-            <v-flex md6 ml-5>
+            <v-flex xs12 md6 ml-5>
               <!-- <v-card height="340" color="rgb(0, 230, 118, 0.5)" hover flat> -->
               <v-card height="340" class="elevation-20">
                 <v-img height="340" :src="require('./assets/img/noah-buscher-1162202-unsplash.jpg')">
@@ -121,19 +130,19 @@
         <v-container class="px-0" grid-list-xs fill-height>
           <v-layout align-content-start row wrap fill-height>
           <v-flex xs12 mb-5>
-            <h1 class="display-3 font-weight-medium d-flex justify-center">Our Approch</h1>
+            <h1 class="display-2 font-weight-medium d-flex justify-center">Our Approch</h1>
           </v-flex>
-            <v-flex xs4 v-for="(i, index) in 5" :key="i">
+            <v-flex xs12 md4 v-for="(i, index) in 5" :key="i">
               <v-card color="#fafafa" class="pa-5 fill-height d-flex align-baseline justify-start" flat>
                 <!-- <div class="text-xs-center pb-3">
                 </div> -->
                 <!-- <v-card-title class="d-flex align-baseline" primary-title > -->
                   <v-flex xs2 mr-4>
-                    <v-icon size="50">{{ourApproach.icons[index]}}</v-icon>
+                    <v-icon color="primary" size="45">{{ourApproach.icons[index]}}</v-icon>
                   </v-flex>
                   <v-flex class="align-self-start" xs10>
                     <div class="text-xs-left">
-                      <h1 class="font-weight-light pb-1">{{ourApproach.headings[index]}}</h1>
+                      <h1 class="font-weight-light primary--text headline pb-1">{{ourApproach.headings[index]}}</h1>
                       <p class="font-weight-light mb-0">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.
                       </p>
@@ -144,6 +153,24 @@
             </v-flex>
           </v-layout>
         </v-container>
+      </section>
+
+
+
+      <section class="carousel-section pb-0">
+
+        <v-flex xs12 mb-5>
+          <h1 class="display-2 font-weight-medium d-flex justify-center">Gallery</h1>
+        </v-flex>
+        <v-flex xs12>
+          <v-carousel hide-delimiters height="600">
+            <v-carousel-item
+              v-for="(item,i) in c_items"
+              :key="i"
+              :src="item.src"
+            ></v-carousel-item>
+          </v-carousel>          
+        </v-flex>
       </section>
 
       <section class="success-stories">
@@ -158,7 +185,7 @@
                 </v-card>
               </v-flex>
               <v-flex md6 ml-5>
-                <p class="title white--text font-weight-light">Success Stories</p>
+                <p class="title white--text success-p pb-1">Success Stories</p>
                 <h1 class="headline font-weight-medium text-xs-left white--text">Water Is Life. We Successfuly Provide Clean Water in South East Asia</h1>
                 <p class="subheading font-weight-light white--text text-xs-left pt-2">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 
@@ -171,38 +198,51 @@
       </section>
 
       <section>
-        <v-carousel hide-delimiters>
-          <v-carousel-item
-            v-for="(item,i) in c_items"
-            :key="i"
-            :src="item.src"
-          ></v-carousel-item>
-        </v-carousel>
+        <v-container grid-list-xs>
+          <v-layout row wrap>
+            <v-flex xs12 mb-5>
+              <h1 class="display-2 font-weight-medium text-xs-center">Latest News</h1>
+            </v-flex>
+            <v-flex xs12 d-flex>
+              
+              <v-flex class="" xs4 v-for="(i, item) in 3" :key="i">
+                  <v-card color="#fafafa" class="mx-3 pb-4" hover flat>
+                    <v-img :src="posts.image[item]"></v-img>
+                    <v-flex xs12 mx-3 mt-3>
+                      <h1 class="title primary--text mb-3">{{ posts.title[item] }}</h1>
+                      <p class="font-weight-light">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                      <a class="primary--text" href="">Read More</a>
+                    </v-flex>
+                  </v-card>
+              </v-flex>
+            </v-flex>
+          </v-layout>
+        </v-container>
       </section>
 
       <section>
         <v-container class="px-0" grid-list-xs fill-height>
           <v-layout align-content-start justify-space-around row wrap fill-height>
-          <v-flex xs12 pt-3 pb-5>
-            <h1 class="display-1 d-flex justify-center">Our Team</h1>
+          <v-flex xs12 mb-5>
+            <h1 class="display-2 font-weight-medium d-flex justify-center">Our Team</h1>
           </v-flex>
-            <v-flex class="pa-2 pt-5" xs4 v-for="(i, index) in 3" :key="i">
+            <v-flex class="" xs4 v-for="(i, index) in 3" :key="i">
               <v-hover>
-                <v-card  slot-scope="{ hover }" class="pa-3 fill-height" flat>
-                  <v-img :src="ourTeam.images[index]">
+                <v-card color="#fafafa" slot-scope="{ hover }" class="pa-3 fill-height" flat>
+                  <v-img class=" elevation-10" :src="ourTeam.images[index]">
                     <v-expand-transition>
-                      <div v-if="hover" class="transition-fast-in-fast-out white v-card--reveal display-3" style="height: 140px;">
+                      <div v-if="hover" class="transition-fast-in-fast-out primary v-card--reveal display-3" style="height: 140px;">
                         <div class="justify-center align-center" style="display: flex;">
                           <div  v-for="icon in icons" :key="icon" xs4>
                             <v-btn class="mx-3" icon>
-                              <v-icon size="24px">{{ icon }}</v-icon>
+                              <v-icon color="white" size="24px">{{ icon }}</v-icon>
                             </v-btn>
                           </div>
                         </div>
-                        <div class="body-2 justify-center align-center d-flex pb-2">
+                        <div class="title font-weight-medium white--text justify-center align-center d-flex pb-2">
                           {{ourTeam.posts[index]}}
                         </div>
-                        <div class="body-2 justify-center align-center d-flex pb-2">
+                        <div class="title white--text font-weight-bold justify-center align-center d-flex pb-2">
                           {{ourTeam.names[index]}}
                         </div>
                       </div>
@@ -218,7 +258,7 @@
 
     <v-footer dark height="auto">
       <v-card class="flex" flat tile>
-        <v-card-title class="teal">
+        <v-card-title white--text class="primary">
           <strong class="subheading">Get connected with us on social networks!</strong>
 
           <v-spacer></v-spacer>
@@ -228,8 +268,8 @@
           </v-btn>
         </v-card-title>
 
-        <v-card-actions class="grey darken-3 justify-center">
-          &copy;2018 — <strong>Vuetify</strong>
+        <v-card-actions class="primary justify-center subheading">
+          &copy; 2018 — <strong class="pl-1">HaritGriha</strong>
         </v-card-actions>
       </v-card>
     </v-footer>
@@ -246,6 +286,10 @@
     },
     data () {
       return {
+        posts: {
+          image: [require('./assets/img/img_4.jpg'), require('./assets/img/img_5.jpg'), require('./assets/img/img_6.jpg')],
+          title: ['Be A Volunteer Today', 'You May Save The Life of A Child', 'Children That Needs Care']
+        },
         navHeader: false,
         drawer: false,
         items: [
@@ -254,16 +298,13 @@
         ],
         c_items: [
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+            src: 'https://images.unsplash.com/photo-1558058739-d57e30ecea50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+            src: 'https://images.unsplash.com/photo-1547783877-6b45fe0bdfe4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+            src: 'https://images.unsplash.com/photo-1527265715775-fca32a0f9b22?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80'
           }
         ],
         extended: true,
@@ -280,7 +321,7 @@
         },
         ourTeam : {
           names: ['KIMBERLY TRAN', 'KIMBERLY TRAN', 'KIMBERLY TRAN'],
-          posts: ['manager', 'manager', 'manager'],
+          posts: ['Manager', 'Manager', 'Manager'],
           images: [
             'https://bootstrapmade.com/demo/themes/eStartup/img/team/1.jpg',
             'https://bootstrapmade.com/demo/themes/eStartup/img/team/2.jpg',
@@ -298,10 +339,11 @@
     mounted() {
       console.log('Mounted')
       let scope = this
+      scope.$vuetify.theme.primary = '#28a745'
       let navClasses = document.getElementById('navBar').classList;
       window.onscroll = function() {
         if(window.scrollY >= 0 && window.scrollY <= 20) {
-          console.log('Im with in 100', window.scrollY)
+          // console.log('Im with in 100', window.scrollY)
           // upAction()
           
           navClasses.remove('collapse');
@@ -310,37 +352,19 @@
           navClasses.remove('navbar-white');
 
         } else if (window.scrollY >= 20 && window.scrollY <= 550) {
-          console.log('Im between 100 and 550', window.scrollY)
+          // console.log('Im between 100 and 550', window.scrollY)
           // downAction()
 
           navClasses.remove('open');
           navClasses.add('collapse');
         } else if (window.scrollY >= 550){
-          console.log('Im more than 550', window.scrollY)
+          // console.log('Im more than 550', window.scrollY)
           // upAction()
           
           navClasses.remove('collapse');
           navClasses.add('open');
           navClasses.add('navbar-white')
         }
-
-
-        function downAction() {
-          console.log('downAction')
-          navClasses.remove('open');
-          navClasses.add('collapse');
-        }
-
-        function upAction() {
-          console.log('upAction')
-          navClasses.remove('collapse');
-          navClasses.add('open');
-        }
-
-        // window.addEventListener("scroll", function() {
-        //   scrollDetect(homeAction, downAction, upAction);
-        // });
-
       };
     },
     methods: {
@@ -349,6 +373,25 @@
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500,600|Overpass:300,400,600&display=swap');
+
+.display-1, .display-3, .subheading, .success-p, .logo, p
+{
+
+  font-family: "Overpass", Arial, sans-serif!important;
+}
+
+p {
+  font-size: 16px!important;
+}
+
+.approch-title,
+.display-2,
+.headline,.title,
+.body-1, .body-2, .body-3 {
+  font-family: "Dosis", sans-serif!important;
+}
 
 .theme--light.application {
     background: #fff!important;
@@ -466,10 +509,10 @@ nav {
 /*  ---------------- Header Image ---------------- */
 
 
-/*  ---------------- Header Image ---------------- */
+/*  ---------------- success-stories ---------------- */
 
 .success-stories {
-  background-image: url('./assets/img/bg_3.jpg');
+  background-image: url('./assets/img/bg_3.jpg')!important;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
   background-position: center; 
@@ -484,7 +527,7 @@ nav {
   top: 0;
   right: 0;
   bottom: 0;
-  opacity: .9;
+  opacity: .85;
   /* z-index: 2; */
 }
 
@@ -496,7 +539,11 @@ nav {
 .success-stories .card {
   border-radius: 3%;
 }
-/*  ---------------- Header Image ---------------- */
+
+.success-stories .success-p {
+  letter-spacing: .2em!important;
+}
+/*  ---------------- success-stories ---------------- */
 
 .v-card--reveal {
   align-items: center;
