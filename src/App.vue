@@ -337,7 +337,7 @@
       }
     },
     mounted() {
-      console.log('Mounted')
+      // console.log('Mounted')
       let scope = this
       scope.$vuetify.theme.primary = '#28a745'
       let navClasses = document.getElementById('navBar').classList;
