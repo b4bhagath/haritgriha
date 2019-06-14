@@ -62,7 +62,7 @@
       <div class="header-image fill-height">
         <v-img class="fill-height" :lazy-src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" :src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" gradient="to top right, rgb(0, 0, 0, .3), rgb(0, 0, 0, .6)">
           <v-container fill-height grid-list-md pa-0>
-            <v-layout align-center column justify-center :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}">
+            <v-layout data-aos="fade" data-aos-delay="400" align-center column justify-center :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}">
               <div :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}">
                 <h1 class="display-3 font-weight-light white--text text-xs-center">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
               </div>
@@ -96,6 +96,14 @@
               <p class="text-xs-center text-sm-left font-weight-light pt-3">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 
             </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+
+      <section class="primary lighten-2 white--text">
+        <v-container grid-list-xs>
+          <v-layout row wrap>
+            <h1 class="display-1 mx-5 text-xs-center font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut necessitatibus repellat excepturi aspernatur voluptate deleniti ad temporibus quae</h1>
           </v-layout>
         </v-container>
       </section>
@@ -138,7 +146,7 @@
             <h1 class="display-2 font-weight-medium d-flex justify-center">Our Approch</h1>
           </v-flex>
             <v-flex xs12 md4 v-for="(i, index) in 5" :key="i">
-              <v-card color="#fafafa" class="pa-5 fill-height d-flex align-baseline justify-start" flat>
+              <v-card data-aos="fade-up" :data-aos-delay="300 + (index*100)" class="pa-5 fill-height d-flex align-baseline justify-start" flat>
                 <!-- <div class="text-xs-center pb-3">
                 </div> -->
                 <!-- <v-card-title class="d-flex align-baseline" primary-title > -->
@@ -182,14 +190,14 @@
         <div class="overlay-1 fill-height">
           <v-container grid-list-xs fill-height>
             <v-layout align-center justify-space-between row fill-height>
-              <v-flex md6>
+              <v-flex md6 data-aos="fade-up">
                 <!-- <v-card height="340" color="rgb(0, 230, 118, 0.5)" hover flat> -->
                 <v-card class="card elevation-15" height="340" color="#fafafa" flat>
                   <v-img height="340" :src="require('./assets/img/bg_3.jpg')">
                   </v-img>
                 </v-card>
               </v-flex>
-              <v-flex md6 ml-5>
+              <v-flex md6 ml-5 data-aos="fade-up" data-aos-delay="300">
                 <p class="title white--text success-p pb-1">Success Stories</p>
                 <h1 class="headline font-weight-medium text-xs-left white--text">Water Is Life. We Successfuly Provide Clean Water in South East Asia</h1>
                 <p class="subheading font-weight-light white--text text-xs-left pt-2">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -211,7 +219,7 @@
             <v-flex xs12 d-flex>
               
               <v-flex class="" xs4 v-for="(i, item) in 3" :key="i">
-                  <v-card color="#fafafa" class="mx-3 pb-4" hover flat>
+                  <v-card color="#fafafa" data-aos="fade-up" :data-aos-delay="300 + (item*100)" class="mx-3 pb-4" hover flat>
                     <v-img :src="posts.image[item]"></v-img>
                     <v-flex xs12 mx-3 mt-3>
                       <h1 class="title primary--text mb-3">{{ posts.title[item] }}</h1>
@@ -231,7 +239,7 @@
           <v-flex xs12 mb-5>
             <h1 class="display-2 font-weight-medium d-flex justify-center">Our Team</h1>
           </v-flex>
-            <v-flex class="" xs4 v-for="(i, index) in 3" :key="i">
+            <v-flex class="" xs4 v-for="(i, index) in 3" :key="i" data-aos="fade-up" :data-aos-delay="300 + (index*100)" >
               <v-hover>
                 <v-card color="#fafafa" slot-scope="{ hover }" class="pa-3 fill-height" flat>
                   <v-img class=" elevation-10" :src="ourTeam.images[index]">
@@ -262,8 +270,8 @@
 
 
     <v-footer dark height="auto">
-      <v-card class="flex" flat tile>
-        <v-card-title white--text class="primary">
+      <v-card class="flex" flat tile color="primary">
+        <v-card-title white--text>
           <strong class="subheading">Get connected with us on social networks!</strong>
 
           <v-spacer></v-spacer>
@@ -350,7 +358,7 @@
       scope.$vuetify.theme.primary = '#28a745'
       let navClasses = document.getElementById('navBar').classList;
       let whoAreWeOffset = document.getElementById("whoAreWe").offsetTop;
-      // console.log('whoAreWeOffset', (whoAreWeOffset))
+      
       window.onscroll = function() {
         if(window.scrollY >= 0 && window.scrollY <= 20) {
           // console.log('Im with in 100', window.scrollY)
@@ -543,6 +551,13 @@ nav {
 
 /*  ---------------- Header Image ---------------- */
 
+/*  ---------------- carousel-section ---------------- */
+
+.carousel-section {
+  background: #fff!important;
+}
+
+/*  ---------------- carousel-section ---------------- */
 
 /*  ---------------- success-stories ---------------- */
 
