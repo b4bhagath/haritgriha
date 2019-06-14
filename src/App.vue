@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="haritGriha">
 
     <!-- <v-toolbar class="navBar" :fixed="navHeader">
       
@@ -20,25 +20,29 @@
         <v-icon dark>menu</v-icon>
       </v-btn>
     </v-toolbar> -->
-    <nav id="navBar" class="hidden-sm-and-down">
-      <v-container grid-list-xs class="pa-0 fill-height">
-        <v-layout class="fill-height" row>
-          <div class="logo mx-3 my-auto headline">
-            <span class="font-weight-bold">Harit</span>
-            <span class="title font-weight-medium">Griha</span>
-          </div>
+      <scrollactive class="my-nav" active-class="haritGriha" :duration="800">
+        <nav id="navBar" class="hidden-sm-and-down navbar-transparent">
+          <v-container grid-list-xs class="pa-0 fill-height">
+            <v-layout class="fill-height" row>
+              <div class="logo mx-3 my-auto headline">
+                <a href="#haritGriha" class="scrollactive-item">
+                  <span class="font-weight-bold">Harit</span>
+                  <span class="title font-weight-medium">Griha</span>
+                </a>
+              </div>
 
-          <div class=" navbar-list body-1 mx-3 my-auto">
-            <span class="pa-4 font-weight-medium body-1">Who Are We</span>
-            <span class="pa-4 font-weight-medium body-1">Why sustainable living</span>
-            <span class="pa-4 font-weight-medium body-1">Our Approch</span>
-            <span class="pa-4 font-weight-medium body-1">Gallery</span>
-            <span class="pa-4 font-weight-medium body-1">Blog</span>
-            <span class="pa-4 font-weight-medium body-1">Our Team</span>
-          </div>
-        </v-layout>
-      </v-container>
-    </nav>
+              <div class=" navbar-list body-1 mx-3 my-auto">
+                <a href="#whoAreWe" class="scrollactive-item pa-4 font-weight-medium body-1">Who Are We</a>
+                <a href="#whySustainableLiving" class="scrollactive-item pa-4 font-weight-medium body-1">Why sustainable living</a>
+                <a href="#ourApproch" class="scrollactive-item pa-4 font-weight-medium body-1">Our Approch</a>
+                <a href="#gallery" class="scrollactive-item pa-4 font-weight-medium body-1">Gallery</a>
+                <a href="#blog" class="scrollactive-item pa-4 font-weight-medium body-1">Blog</a>
+                <a href="#ourTeam" class="scrollactive-item pa-4 font-weight-medium body-1">Our Team</a>
+              </div>
+            </v-layout>
+          </v-container>
+        </nav>
+      </scrollactive>
 
     <v-content>
 
@@ -69,7 +73,7 @@
       </div>
 
       <!-- Who Are We -->
-      <section>
+      <section id="whoAreWe">
         <v-container grid-list-xs fill-height>
           <v-layout align-center justify-space-between row fill-height :class="{'wrap': $vuetify.breakpoint.smAndDown, '': $vuetify.breakpoint.mdAndUp}">
             <v-flex md6 xs12>
@@ -78,7 +82,8 @@
                 <v-card-title class="fill-height" primary-title>
                   <div class="text-xs-center text-sm-left pa-4">
                     <h1 class="display-1 font-weight-light">Served Over</h1>
-                    <h1 class="display-3 font-weight-medium primary--text">1,321,901</h1>
+                    <h1 v-if="!insideWhoAreWeSection" class="display-3 font-weight-medium primary--text">1,321,901</h1>
+                      <animated-number v-else class="display-3 font-weight-medium primary--text" :value="number" :formatValue="formatToPrice" :duration="5000"/>
                     <h1 class="display-1 font-weight-light">Children in 150 Countries</h1>
                   </div>
                 </v-card-title>
@@ -96,7 +101,7 @@
       </section>
 
       <!-- Why sustainable living? -->
-      <section>
+      <section id="whySustainableLiving">
         <v-container grid-list-xs fill-height>
           <v-layout align-center justify-space-between row fill-height :class="{'wrap': $vuetify.breakpoint.smAndDown, '': $vuetify.breakpoint.mdAndUp}">
             <v-flex xs12 md6>
@@ -126,7 +131,7 @@
       </section>
 
       <!-- Our Approch -->
-      <section>
+      <section id="ourApproch">
         <v-container class="px-0" grid-list-xs fill-height>
           <v-layout align-content-start row wrap fill-height>
           <v-flex xs12 mb-5>
@@ -157,7 +162,7 @@
 
 
 
-      <section class="carousel-section pb-0">
+      <section id="gallery" class="carousel-section pb-0">
 
         <v-flex xs12 mb-5>
           <h1 class="display-2 font-weight-medium d-flex justify-center">Gallery</h1>
@@ -197,7 +202,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="blog">
         <v-container grid-list-xs>
           <v-layout row wrap>
             <v-flex xs12 mb-5>
@@ -220,7 +225,7 @@
         </v-container>
       </section>
 
-      <section>
+      <section id="ourTeam">
         <v-container class="px-0" grid-list-xs fill-height>
           <v-layout align-content-start justify-space-around row wrap fill-height>
           <v-flex xs12 mb-5>
@@ -279,13 +284,15 @@
 
 <script>
   // import HelloWorld from './components/HelloWorld'
+  import AnimatedNumber from "animated-number-vue";
   export default {
     name: 'App',
     components: {
-      // HelloWorld
+      AnimatedNumber
     },
     data () {
       return {
+        insideWhoAreWeSection: false,
         posts: {
           image: [require('./assets/img/img_4.jpg'), require('./assets/img/img_5.jpg'), require('./assets/img/img_6.jpg')],
           title: ['Be A Volunteer Today', 'You May Save The Life of A Child', 'Children That Needs Care']
@@ -332,7 +339,8 @@
           'fab fa-facebook',
           'fab fa-twitter',
           'fab fa-instagram'
-        ]
+        ],
+        number: 1321901
         //
       }
     },
@@ -341,6 +349,8 @@
       let scope = this
       scope.$vuetify.theme.primary = '#28a745'
       let navClasses = document.getElementById('navBar').classList;
+      let whoAreWeOffset = document.getElementById("whoAreWe").offsetTop;
+      // console.log('whoAreWeOffset', (whoAreWeOffset))
       window.onscroll = function() {
         if(window.scrollY >= 0 && window.scrollY <= 20) {
           // console.log('Im with in 100', window.scrollY)
@@ -351,23 +361,37 @@
           navClasses.add('navbar-transparent')
           navClasses.remove('navbar-white');
 
-        } else if (window.scrollY >= 20 && window.scrollY <= 550) {
+        } else if (window.scrollY >= 20 && window.scrollY <= whoAreWeOffset-80) {
+        // console.log('whoAreWeOffset elseif', window.scrollY, whoAreWeOffset-80)
+
           // console.log('Im between 100 and 550', window.scrollY)
           // downAction()
 
           navClasses.remove('open');
           navClasses.add('collapse');
-        } else if (window.scrollY >= 550){
+        } else {
           // console.log('Im more than 550', window.scrollY)
           // upAction()
           
-          navClasses.remove('collapse');
-          navClasses.add('open');
+          navClasses.remove('collapse')
+          navClasses.add('open')
           navClasses.add('navbar-white')
+          navClasses.remove('navbar-transparent')
+          scope.insideWhoAreWeSection = true
         }
       };
     },
     methods: {
+      formatToPrice(value) {
+        // console.log('Value from animate number', value)
+        return value.toString().split(".")[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // console.log('Split', parts)
+        // parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // return parts[0];
+      },
+      whoAreWeAnimation() {
+        console.log('whoAreWeAnimation')
+      }
     }
   }
 </script>
@@ -453,6 +477,17 @@ nav {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+}
+.navbar-transparent .scrollactive-item {
+  color: #fff!important;
+}
+
+.navbar-white .scrollactive-item {
+  color: #424242!important;
+}
+
+.scrollactive-item {
+  text-decoration: none;
 }
 
 @-webkit-keyframes collapse {
