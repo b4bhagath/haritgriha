@@ -60,11 +60,11 @@
 
       <!-- Header Image -->
       <div class="header-image fill-height">
-        <v-img class="fill-height" :lazy-src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" :src="require('./assets/img/photo-1485841938031-1bf81239b815.jpeg')" gradient="to top right, rgb(0, 0, 0, .3), rgb(0, 0, 0, .6)">
+        <v-img class="fill-height" :lazy-src="require('../../HaritGriha Bg-Images/adventure-backpack-conifer-840719.jpg')" :src="require('../../HaritGriha Bg-Images/adventure-backpack-conifer-840719.jpg')" gradient="to top right, rgb(0, 0, 0, .3), rgb(0, 0, 0, .6)">
           <v-container fill-height grid-list-md pa-0>
             <v-layout data-aos="fade" data-aos-delay="400" align-center column justify-center :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}">
               <div :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-5': $vuetify.breakpoint.mdAndUp}">
-                <h1 class="display-3 font-weight-light white--text text-xs-center">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                <h1 class="display-2 font-weight-bold white--text text-xs-center">Big change happens through many small changes that we make in our daily lives </h1>
               </div>
               <!-- <h4 class="subheading white--text">Build your application today!</h4> -->
             </v-layout>
@@ -82,7 +82,7 @@
                 <v-card-title class="fill-height" primary-title>
                   <div class="text-xs-center text-sm-left pa-4">
                     <h1 class="display-1 font-weight-light">Served Over</h1>
-                    <h1 v-if="!insideWhoAreWeSection" class="display-3 font-weight-medium primary--text">1,321,901</h1>
+                    <h1 v-if="!insideWhoAreWeSection" class="display-3 font-weight-medium primary--text">0</h1>
                       <animated-number v-else class="display-3 font-weight-medium primary--text" :value="number" :formatValue="formatToPrice" :duration="5000"/>
                     <h1 class="display-1 font-weight-light">Children in 150 Countries</h1>
                   </div>
@@ -100,13 +100,13 @@
         </v-container>
       </section>
 
-      <section class="primary lighten-2 white--text">
+      <!-- <section class="primary lighten-2 white--text">
         <v-container grid-list-xs>
           <v-layout row wrap>
             <h1 class="display-1 mx-5 text-xs-center font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut necessitatibus repellat excepturi aspernatur voluptate deleniti ad temporibus quae</h1>
           </v-layout>
         </v-container>
-      </section>
+      </section> -->
 
       <!-- Why sustainable living? -->
       <section id="whySustainableLiving">
